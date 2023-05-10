@@ -2,3 +2,13 @@
 build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/.qtc_clangd/.cache/clangd/index/__stddef_max_align_t.h.73686C4C901DE5A3.idx
 *.idx
 *.json
+*.stash
+*.obj
+build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/Makefile
+build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/Makefile.Debug
+build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/Makefile.Release
+build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/debug/Wifibot.vc.pdb
+build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/debug/moc_mainwindow.cpp
+build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/debug/moc_myrobot.cpp
+build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/debug/moc_predefs.h
+build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ui_mainwindow.h
