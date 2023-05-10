@@ -12,3 +12,5 @@ build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/debug/moc_mainwindow.cpp
 build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/debug/moc_myrobot.cpp
 build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/debug/moc_predefs.h
 build-Wifibot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug/ui_mainwindow.h
+*.pdb
+*.ilk
