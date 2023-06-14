@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QUrl>
 #include <QWebEngineView>
+
 MainWindow::MainWindow(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Dialog)
@@ -13,6 +14,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 
+    //Vue de la webcam du robot (indÃ©pendant du robot)
+    manager = new QNetworkAccessManager;
+        view = new QWebEngineView();
+        view->load(QUrl("http://192.168.1.106:8080/?action=stream"));
+        view->show();
+
+    this->ui->camera->addWidget(view);
 
     robot = new MyRobot(this);
     robot->doConnect();
@@ -197,6 +205,48 @@ void MainWindow::on_slide_vitesse_valueChanged(int value)
     ui->titre_vitesse->setText(vit_string + " (" + pourcentage_string + "%)");
 }
 
+//MOUVEMENT CAMERA
+void MainWindow::on_haut_camera_pressed()
+{
+    cam_haut();
+}
+
+void MainWindow::on_gauche_camera_pressed()
+{
+    cam_gauche();
+}
+
+void MainWindow::on_droite_camera_pressed()
+{
+    cam_droite();
+}
+
+void MainWindow::on_bas_camera_pressed()
+{
+    cam_bas();
+}
+
+void MainWindow::cam_haut()
+{
+    request.setUrl(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=-200"));
+    manager->get(request);
+}
+void MainWindow::cam_bas()
+{
+    request.setUrl(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=200"));
+    manager->get(request);
+
+}
+void MainWindow::cam_gauche()
+{
+    request.setUrl(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=200"));
+    manager->get(request);
+}
+void MainWindow::cam_droite()
+{
+    request.setUrl(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=-200"));
+    manager->get(request);
+}
 
 void MainWindow::on_pushButton_3_pressed()
 {
