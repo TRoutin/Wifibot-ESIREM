@@ -51,6 +51,16 @@ void MainWindow::keyPressEvent(QKeyEvent* key_robot){
     case Qt::Key_Space :    //Stop
         robot->set_etat(5);
         break;
+    case Qt::Key_Right:
+        cam_droite();
+    case Qt::Key_Left:
+        cam_gauche();
+    case Qt::Key_Up:
+        cam_haut();
+    case Qt::Key_Down:
+        cam_bas();
+    case Qt::Key_Escape:
+        robot->disConnect();
     }
 }
 
