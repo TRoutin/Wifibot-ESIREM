@@ -10,6 +10,7 @@
 #include <QPushButton>
 #include <QKeyEvent>
 #include "myrobot.h"
+#include <QWebEngineView>
 
 
 
@@ -78,7 +79,25 @@ private slots :
 
     void on_pushButton_3_released();
 
+    //Mouvements cameras
+    void on_haut_camera_pressed();
+    void on_gauche_camera_pressed();
+    void on_droite_camera_pressed();
+    void on_bas_camera_pressed();
+
+    void cam_haut();
+    void cam_bas();
+    void cam_gauche();
+    void cam_droite();
+
 private:
+
+    //Affichage camera
+    QWebEngineView *view;
+
+    //Mouvement camera
+    QNetworkAccessManager *manager;
+    QNetworkRequest request;
 
     //Robot
     MyRobot* robot;
