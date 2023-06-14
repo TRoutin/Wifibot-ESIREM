@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QUrl>
+#include <QWebEngineView>
 MainWindow::MainWindow(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Dialog)

@@ -238,7 +238,7 @@
     <string>⇑</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="bgauche">
    <property name="geometry">
     <rect>
      <x>650</x>
@@ -251,7 +251,7 @@
     <string>↙</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="bdroite">
    <property name="geometry">
     <rect>
      <x>740</x>
