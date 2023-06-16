@@ -35,6 +35,8 @@ private slots :
     //Connexion
     void connexion();
 
+    void updatingUI(QByteArray DataReceived);
+
     //Lancement du mouvement
     void avancer();
     void gauche();
@@ -104,6 +106,9 @@ private:
     MyRobot* robot;
 
     Ui::Dialog *ui;
+
+    int speedFront[2];
+    int batLevel;
 
 };
 

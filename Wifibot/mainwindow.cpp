@@ -67,6 +67,30 @@ void MainWindow::keyReleaseEvent(QKeyEvent* key_robot){
     robot->set_etat(5);
 }
 
+void MainWindow::updatingUI(QByteArray DataReceived){ // Mise a jour de l'interface
+    //On récupère les données des vitesses gauche et droites
+    speedFront[0] = int((DataReceived[1] << 8) + DataReceived[0]);// Vitesse Gauche
+    if (speedFront[0] < 0){ speedFront[0] = 65536+speedFront[0];} // Prise en compte du bit de signe
+    speedFront[1] = int((DataReceived[10] << 8) + DataReceived[9]);// Vitesse Droite
+    if (speedFront[1] < 0){ speedFront[1] = 65536+speedFront[1];}
+    //tics /50 ms Faut voir le nb de marqueur et la taille de la roue pour transferer les tics en metre
+    //2448 tics par tour de roue. Taille roue : (a la main ) diamètre 14cm
+    //Calcul vitesse
+    float vitesse[] = {0,0};
+    vitesse[0] = float(speedFront[0])*3.14*0.014*20*100/2448; //On prend quelque chiffre après la virgule
+    vitesse[1] = float(speedFront[1])*3.14*0.014*20*100/2448;
+
+    //Affichage dans l'interface
+    // QString::first() n'existe pas?? On est donc forcé a utiliser le code pas pratique suivant
+    QString GVitesse = QVariant(vitesse[0]).toString();
+    GVitesse.chop(GVitesse.length()-4);
+    QString LVitesse = QVariant(vitesse[1]).toString();
+    LVitesse.chop(LVitesse.length()-4);
+    ui->leftSpeed-> setText(GVitesse+" cm/s");
+    ui->rightSpeed-> setText(LVitesse+" cm/s");
+
+}
+
 //Fonctions selon input :
 void MainWindow::connexion()
 {

@@ -14,6 +14,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
@@ -45,6 +46,8 @@ public:
     QPushButton *bgauche;
     QPushButton *bdroite;
     QPushButton *pushButton_3;
+    QLineEdit *leftSpeed;
+    QLineEdit *rightSpeed;
 
     void setupUi(QDialog *Dialog)
     {
@@ -119,6 +122,12 @@ public:
         pushButton_3 = new QPushButton(Dialog);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(690, 270, 51, 29));
+        leftSpeed = new QLineEdit(Dialog);
+        leftSpeed->setObjectName(QString::fromUtf8("leftSpeed"));
+        leftSpeed->setGeometry(QRect(290, 390, 113, 28));
+        rightSpeed = new QLineEdit(Dialog);
+        rightSpeed->setObjectName(QString::fromUtf8("rightSpeed"));
+        rightSpeed->setGeometry(QRect(510, 390, 113, 28));
 
         retranslateUi(Dialog);
 
