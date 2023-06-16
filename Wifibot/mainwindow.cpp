@@ -11,8 +11,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 
-    ui->setupUi(this);
-
 
     //Vue de la webcam du robot (indÃ©pendant du robot)
     manager = new QNetworkAccessManager;
@@ -238,24 +236,25 @@ void MainWindow::on_bas_camera_pressed()
 
 void MainWindow::cam_haut()
 {
-    request.setUrl(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=-200"));
-    manager->get(request);
+    QNetworkAccessManager* manager = new QNetworkAccessManager(this);
+    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=-200")));
 }
 void MainWindow::cam_bas()
 {
-    request.setUrl(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=200"));
-    manager->get(request);
+    QNetworkAccessManager* manager = new QNetworkAccessManager(this);
+    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=200")));
 
 }
 void MainWindow::cam_gauche()
 {
-    request.setUrl(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=200"));
-    manager->get(request);
+    QNetworkAccessManager* manager = new QNetworkAccessManager(this);
+    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=200")));
 }
 void MainWindow::cam_droite()
 {
-    request.setUrl(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=-200"));
-    manager->get(request);
+    QNetworkAccessManager* manager = new QNetworkAccessManager(this);
+
+    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=-200")));
 }
 
 void MainWindow::on_pushButton_3_pressed()

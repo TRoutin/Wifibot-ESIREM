@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QDebug>
-
+#include <QMainWindow>
 #include <QDialog>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -11,6 +11,7 @@
 #include <QKeyEvent>
 #include "myrobot.h"
 #include <QWebEngineView>
+#include <QNetworkAccessManager>
 
 
 
